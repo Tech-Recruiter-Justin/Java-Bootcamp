@@ -7,3 +7,4 @@
 - .java files as source code
 - .class files as bytecode (machine code )
 - contains methods
+
