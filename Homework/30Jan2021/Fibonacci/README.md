@@ -1,4 +1,4 @@
-# Fibonacci - Iterative Implementation
+# Fibonacci - Iterative & Recursive Implementation
 
 VERSION or DATE: 4th Feb 2021 
 
