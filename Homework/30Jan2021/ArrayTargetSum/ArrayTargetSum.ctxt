@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=ArrayTargetSum
+comment1.params=
+comment1.target=void\ genArray()
+comment2.params=numPool
+comment2.target=int\ genAns(java.util.ArrayList)
+comment3.params=numPool\ answer
+comment3.target=void\ findPair(java.util.ArrayList,\ int)
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+numComments=5
