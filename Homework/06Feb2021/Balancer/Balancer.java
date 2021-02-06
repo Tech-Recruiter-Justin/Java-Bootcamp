@@ -10,7 +10,7 @@ public class Balancer{
     static String test5 = "((((((((((((((((((((((((()))))))))))))))))))))))))(((())(())())())()(())()(())";
     
     // check function
-    public static void check (String test){
+    public static boolean check (String test){
         // instance variable
         int counter = 0;
         boolean start = true;
@@ -24,7 +24,7 @@ public class Balancer{
             // if start at ")", must be unbalanced
             if (Character.toString(test.charAt(i)).equals(")") && start == true){
                 System.out.println("not balanced");
-                System.exit(1);
+                return false;
             // normal start of case with "("
             } else if (Character.toString(test.charAt(i)).equals("(")){
                 counter += 1;
@@ -34,22 +34,25 @@ public class Balancer{
             } else if (Character.toString(test.charAt(i)).equals(")") && start == false){
                 counter -= 1;
                 i += 1;
-
                 }
             }
         // if counter is 0 and the loop has ended, the String is balanced
         if (counter == 0){
             System.out.println("balanced");
+            return true;
         // counter greater or less that 0 means unbalance
-        } else {System.out.println("not balanced");}
+        } else {
+            System.out.println("not balanced");
+            return false;
+        }
     }
     
     // main method
     public static void main(String []args){
-        check(test1);
-        check(test2);
-        check(test3);
-        check(test4);
-        check(test5);
+        System.out.println(check(test1) + "\n");
+        System.out.println(check(test2) + "\n");
+        System.out.println(check(test3) + "\n");
+        System.out.println(check(test4) + "\n");
+        System.out.println(check(test5) + "\n");
     }
 }
