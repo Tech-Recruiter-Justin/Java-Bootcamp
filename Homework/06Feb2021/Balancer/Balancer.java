@@ -3,12 +3,11 @@ import java.lang.String;
 public class Balancer{
     
     // test cases
-    static String test1 = "(((())))";
-    static String test2 = "()()()";
-    static String test3 = "()()((((()))))";
-    static String test4 = "((()";
-    static String test5 = ")((()))";
-    static String test6 = "((()))()()(((())))(";
+    static String test1 = "(((())))(";
+    static String test2 = "()()((((()))))";
+    static String test3 = "((()))()()(((()))())";
+    static String test4 = "(()))))))";
+    static String test5 = "((((((((((((((((((((((((()))))))))))))))))))))))))(((())(())())())()(())()(())";
     
     // check function
     public static void check (String test){
@@ -35,27 +34,10 @@ public class Balancer{
             } else if (Character.toString(test.charAt(i)).equals(")") && start == false){
                 counter -= 1;
                 i += 1;
-                // continue to stack down if there are more ")"
-                    while (i < test.length()){
-                        if (Character.toString(test.charAt(i)).equals(")")){
-                            counter -= 1;
-                            i += 1;
-                        // switching back to "(" indicates a new start of cycle
-                        } else {
-                            // if counter is 0, restart the 
-                            if (counter == 0){
-                                start = true;
-                                break;
-                                // counter greater or less that 0 means unbalance
-                            } else {
-                                System.out.println("not balanced");
-                                System.exit(1);
-                            }
-                        }
-                    }
+
                 }
             }
-        // if counter is 0, restart the 
+        // if counter is 0 and the loop has ended, the String is balanced
         if (counter == 0){
             System.out.println("balanced");
         // counter greater or less that 0 means unbalance
@@ -69,6 +51,5 @@ public class Balancer{
         check(test3);
         check(test4);
         check(test5);
-        check(test6);
     }
 }
